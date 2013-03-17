@@ -1,4 +1,4 @@
 rate-a-stogie
 =============
 
-Rate Stogie Web Site
+Rate A Stogie Web Site source code.
