@@ -1,0 +1,32 @@
+<div class="navbar navbar-inverse navbar-fixed-top" ng-controller="menu-controller">
+    <div class="navbar-inner">
+        <div class="container">
+            <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </a>
+            <a class="brand" href="#">Rate A Stogie</a>
+            <div class="nav-collapse collapse">
+                <ul class="nav">
+                    <li><a id="aboutLink" href="#/about">About</a></li>
+                    <li><a id="contactLink" href="#/contact">Contact</a></li>
+                    <li id="userMenu" class="dropdown" ng-show="isUserLoggedIn()">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                            My Stuff
+                            <b class="caret"></b>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a id="myProfileLink" href="#/myprofile">Profile</a></li>
+                            <li><a id="myReviewsLink" href="#/myreviews">Reviews</a></li>
+                            <li><a id="cigarLink" href="#/cigar">Add a Cigar</a></li>
+                            <li><a id="reviewLink" href="#/review">Create a Review</a></li>
+                        </ul>
+                    </li>
+                </ul>
+                <span ng-include="'user/login-partial.html'"></span>
+            </div>
+            <!--/.nav-collapse -->
+        </div>
+    </div>
+</div>

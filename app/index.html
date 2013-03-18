@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="rateastogie">
+<head>
+    <meta charset="utf-8">
+    <style>
+        [ng-cloak] {
+            display: none;
+        }
+    </style>
+    <title>Rate a Stogie</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Cigar Rating and Review Social Site">
+    <meta name="author" content="Jim Lavin">
+    <!-- Le styles -->
+    <link href="lib/bootstrap/css/bootstrap.css" rel="stylesheet">
+    <style type="text/css">
+        body {
+            padding-top: 60px;
+            padding-bottom: 40px;
+        }
+    </style>
+    <link href="lib/bootstrap/css/bootstrap-responsive.css" rel="stylesheet">
+    <link href="lib/flat-ui/css/flat-ui.css" rel="stylesheet">
+    <link href="lib/angular-ui/build/angular-ui.css" rel="stylesheet">
+    <link href="lib/ng-grid/ng-grid.css" rel="stylesheet">
+    <link href="application/application.css" rel="stylesheet">
+    <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <!-- Fav and touch icons -->
+    <link rel="shortcut icon" href="ico/favicon.png">
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="ico/apple-touch-icon-144-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="ico/apple-touch-icon-114-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="ico/apple-touch-icon-72-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" href="ico/apple-touch-icon-57-precomposed.png">
+</head>
+<body>
+<div class="container-fluid">
+    <div ng-include="'menu/menu-partial.html'"></div>
+    <div class="row-fluid">
+        <div ng-view>
+        </div>
+    </div>
+    <div class="row-fluid">
+        <hr>
+
+        <footer>
+            <p>&copy; Coding Smackdown TV 2012</p>
+        </footer>
+    </div>
+</div>
+<!-- /container -->
+<!-- Le javascript
+================================================== -->
+<!-- Placed at the end of the document so the pages load faster -->
+<script src="lib/jquery/jquery.js"></script>
+<script src="lib/bootstrap/js/bootstrap.js"></script>
+<script src="lib/angular/angular.js"></script>
+<script src="lib/angular-ui/build/angular-ui.js"></script>
+<script src="lib/bootstrap-ui/ui-bootstrap-0.2.0.js"></script>
+<script src="lib/angularjs-mongolab-promise/mongolabResourceHttp.js"></script>
+<script src="lib/ng-grid/ng-grid-1.6.3.debug.js"></script>
+<script src="lib/sha/sha.js"></script>
+<script src="application/application.js"></script>
+<script src="application/datatypes.js"></script>
+<script src="application/data-services.js"></script>
+<script src="user/md5-service.js"></script>
+<script src="user/unique-email-directive.js"></script>
+<script src="user/unique-user-name-directive.js"></script>
+<script src="user/validate-equals-directive.js"></script>
+<script src="user/gravatar-directive.js"></script>
+<script src="user/authentication-service.js"></script>
+<script src="user/login-controller.js"></script>
+<script src="user/user-register-controller.js"></script>
+<script src="user/user-profile-controller.js"></script>
+<script src="user/user-change-email-controller.js"></script>
+<script src="user/user-change-password-controller.js"></script>
+<script src="menu/menu-controller.js"></script>
+<script src="home/home-controller.js"></script>
+<script src="localization/localization-service.js"></script>
+<script src="localization/localization-directive.js"></script>
+<script src="localization/localization-filter.js"></script>
+</body>
+</html>
