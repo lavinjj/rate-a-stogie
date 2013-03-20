@@ -14,7 +14,7 @@ Application.Filters = angular.module('rateastogie.filters', []);
 Application.Directives = angular.module('rateastogie.directives', ['rateastogie.services']);
 
 
-angular.module('rateastogie', ['ui', 'ui.bootstrap', 'ngGrid', 'mongolabResourceHttp', 'rateastogie.filters', 'rateastogie.services', 'rateastogie.directives', 'rateastogie.constants', 'rateastogie.controllers']).
+angular.module('rateastogie', ['ui', 'ui.bootstrap', 'ui.bootstrap.carousel', 'ui.bootstrap.transition', 'ngGrid', 'mongolabResourceHttp', 'rateastogie.filters', 'rateastogie.services', 'rateastogie.directives', 'rateastogie.constants', 'rateastogie.controllers']).
   config(['$routeProvider', function($routeProvider) {
     
     $routeProvider.

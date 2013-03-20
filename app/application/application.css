@@ -3,3 +3,16 @@
     border: 1px solid rgb(212,212,212);
     height: 300px;
 }
+
+.mainCarousel {
+    width: 750px;
+    height: 250px;
+}
+
+.navbar-inverse .navbar-inner {
+    background: #443113;
+}
+
+.btn {
+    background: #675423;
+}

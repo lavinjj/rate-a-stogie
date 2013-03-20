@@ -1,13 +1,17 @@
 <div class="container-fluid" ng-controller="home-controller">
     <div class="row-fluid" ></div>
     <!-- Main hero unit for a primary marketing message or call to action -->
-    <div class="hero-unit">
+    <div class="row-fluid" >
         <h1 data-i18n="_HomeTitle_">Welcome to Rate a Stogie!</h1>
-
-        <p data-i18n="_HomeText_">Today’s cigar smokers are increasingly selective and perceptive, and are eager to hone their skills of enjoying premium cigars. Limited production, high quality stogies are always emerging and evolving and require the complements of proper storage and aging that you can provide. Even a once immature, coarse tasting and rough burning smoke may gain balance and richness just from laying down in your properly maintained humidor for an appropriate time. Long-term aging is not a practice for the average smoker, but rather a luxury embraced by the connoisseur smoker and hobbyist.
-            Having a standardized cigar rating system can be very useful.
-            You want to be able to compare different cigars, rated by different people, in different places at different times.
-            There is no cigar rating system that is perfect, and there probably never will be! Here's one that we believe is amongst the best available. The social site that allows you to review cigars.</p>
+        <p>&nbsp;</p>
+        <carousel interval="myInterval" class="mainCarousel">
+            <slide ng-repeat="slide in slides" active="slide.active">
+                <img ng-src="{{slide.image}}" style="margin:auto;">
+                <div class="carousel-caption">
+                    <p>{{slide.text}}</p>
+                </div>
+            </slide>
+        </carousel>
     </div>
     <!-- Banner Content -->
     <div id="loggedOutBanner" class="row-fluid">
