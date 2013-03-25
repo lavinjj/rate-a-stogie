@@ -1,4 +1,4 @@
-describe('gravatar directive', function() {
+describe('gravatar directive', function () {
     var elm;
     var multi;
     var scope;

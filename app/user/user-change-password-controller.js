@@ -10,7 +10,7 @@ Application.Controllers.controller('user-change-password-controller', ['$scope',
         var result = false;
         $scope.errorMessages = [];
 
-        if($scope.registerForm.Password.$error.equal && !$scope.registerForm.Password.$pristine) {
+        if ($scope.registerForm.Password.$error.equal && !$scope.registerForm.Password.$pristine) {
             result = true;
             $scope.errorMessages.push('Passwords do not match.')
         }
@@ -28,8 +28,8 @@ Application.Controllers.controller('user-change-password-controller', ['$scope',
         });
     };
 
-    $scope.init = function() {
-        if(!authenticate.isBrewerLoggedIn()) {
+    $scope.init = function () {
+        if (!authenticate.isBrewerLoggedIn()) {
             $location.path('/');
         }
 

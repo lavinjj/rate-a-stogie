@@ -11,8 +11,8 @@
 Application.Directives.
     directive('gravatarImage', ['md5', function (md5) {
         return {
-            restrict:"EAC",
-            link:function (scope, elm, attrs) {
+            restrict: "EAC",
+            link: function (scope, elm, attrs) {
                 // by default the values will come in as undefined so we need to setup a
                 // watch to notify us when the value changes
                 scope.$watch(attrs.email, function (value) {
@@ -23,18 +23,18 @@ Application.Directives.
                         // parse the size attribute
                         var size = attrs.size;
                         // default to 40 pixels if not set
-                        if((size=== null) || (size == undefined) || (size == '')){
+                        if ((size === null) || (size == undefined) || (size == '')) {
                             size = 40;
                         }
                         // parse the ratings attribute
                         var rating = attrs.rating;
                         // default to pg if not set
-                        if((rating === null) || (rating === undefined)|| (rating === '')){
+                        if ((rating === null) || (rating === undefined) || (rating === '')) {
                             rating = 'pg';
                         }
                         // parse the default image url
                         var defaultUrl = attrs.default;
-                        if((defaultUrl === null) || (defaultUrl === undefined)|| (defaultUrl === '')) {
+                        if ((defaultUrl === null) || (defaultUrl === undefined) || (defaultUrl === '')) {
                             defaultUrl = '404';
                         }
                         // construct the tag to insert into the element

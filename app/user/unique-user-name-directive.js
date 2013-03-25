@@ -11,7 +11,7 @@ Application.Directives.
             link: function (scope, elm, attrs, ctrl) {
 
                 var validator = function (value) {
-                    UserResource.query({"UserName": value}).then(function(result){
+                    UserResource.query({"UserName": value}).then(function (result) {
                         if (result.length === 0) {
                             // it is valid
                             ctrl.$setValidity('uniqueUserName', true);

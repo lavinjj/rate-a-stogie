@@ -9,11 +9,11 @@ Application.Controllers.controller('user-change-email-controller', ['$scope', '$
 
         $scope.errorMessages = [];
 
-        if($scope.registerForm.Email.$error.required && !$scope.registerForm.LastName.$pristine) {
+        if ($scope.registerForm.Email.$error.required && !$scope.registerForm.LastName.$pristine) {
             result = true;
             $scope.errorMessages.push('Email is required.')
         }
-        if($scope.registerForm.Email.$error.uniqueEmail && !$scope.registerForm.Email.$pristine) {
+        if ($scope.registerForm.Email.$error.uniqueEmail && !$scope.registerForm.Email.$pristine) {
             result = true;
             $scope.errorMessages.push('That Email already has an account.')
         }
@@ -29,8 +29,8 @@ Application.Controllers.controller('user-change-email-controller', ['$scope', '$
         });
     };
 
-    $scope.init = function() {
-        if(!authenticate.isBrewerLoggedIn()) {
+    $scope.init = function () {
+        if (!authenticate.isBrewerLoggedIn()) {
             $location.path('/');
         }
 

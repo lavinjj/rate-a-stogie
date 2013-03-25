@@ -8,11 +8,11 @@
 Application.Services.
     constant('MONGOLAB_CONFIG',{API_KEY:'50a70bf4e4b039251d28b93b', DB_NAME:'rate-a-stogie'}).
     factory('UserResource',function ($mongolabResourceHttp) {
-        return $mongolabResourceHttp('users');
+        return $mongolabResourceHttp('User');
     }).
     factory('CigarResource',function ($mongolabResourceHttp) {
-        return $mongolabResourceHttp('cigars');
+        return $mongolabResourceHttp('Cigar');
     }).
     factory('RatingResource',function ($mongolabResourceHttp) {
-        return $mongolabResourceHttp('ratings');
+        return $mongolabResourceHttp('Rating');
     });

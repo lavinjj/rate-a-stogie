@@ -14,11 +14,11 @@
 Application.Services.factory('authenticate', ['$http', '$rootScope', '$window', 'UserResource', function ($http, $rootScope, $window, UserResource) {
     var authenticate = {
         // data members
-        currentUser:null,
+        currentUser: null,
 
         // methods
-        login:function (username, password) {
-            UserResource.query({UserName:username}).then(function (users) {
+        login: function (username, password) {
+            UserResource.query({UserName: username}).then(function (users) {
                 if (users.length === 0) {
                     $window.alert("Invalid user name");
                     return;
@@ -38,12 +38,12 @@ Application.Services.factory('authenticate', ['$http', '$rootScope', '$window', 
             });
         },
 
-        hashPassword:function(password, salt){
+        hashPassword: function (password, salt) {
             var result = Sha1.hash(password + salt);
             return result;
         },
 
-        isUserLoggedIn:function () {
+        isUserLoggedIn: function () {
             if ((authenticate.currentUser !== null) && (authenticate.currentUser !== undefined)) {
                 return true;
             }
@@ -51,7 +51,7 @@ Application.Services.factory('authenticate', ['$http', '$rootScope', '$window', 
             return false;
         },
 
-        logout:function () {
+        logout: function () {
             authenticate.currentUser = null;
             $rootScope.$broadcast('USER_UPDATED');
         }

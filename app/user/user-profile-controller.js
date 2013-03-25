@@ -9,11 +9,11 @@ Application.Controllers.controller('user-profile-controller', ['$scope', '$locat
 
         $scope.errorMessages = [];
 
-        if($scope.registerForm.FirstName.$error.required && !$scope.registerForm.FirstName.$pristine) {
+        if ($scope.registerForm.FirstName.$error.required && !$scope.registerForm.FirstName.$pristine) {
             result = true;
             $scope.errorMessages.push('First Name is required.')
         }
-        if($scope.registerForm.LastName.$error.required && !$scope.registerForm.LastName.$pristine) {
+        if ($scope.registerForm.LastName.$error.required && !$scope.registerForm.LastName.$pristine) {
             result = true;
             $scope.errorMessages.push('Last Name is required.')
         }
@@ -21,11 +21,11 @@ Application.Controllers.controller('user-profile-controller', ['$scope', '$locat
         return result;
     };
 
-    $scope.changeEmail = function() {
+    $scope.changeEmail = function () {
         $location.path('/myemail');
     }
 
-    $scope.changePassword = function() {
+    $scope.changePassword = function () {
         $location.path('/mypassword');
     }
 
@@ -37,8 +37,8 @@ Application.Controllers.controller('user-profile-controller', ['$scope', '$locat
         });
     };
 
-    $scope.init = function() {
-        if(!authenticate.isUserLoggedIn()) {
+    $scope.init = function () {
+        if (!authenticate.isUserLoggedIn()) {
             $location.path('/');
         }
 

@@ -1,6 +1,6 @@
 'use strict';
 
-Application.Controllers.controller('login-controller', ['$scope', '$location', 'authenticate', function($scope, $location, authenticate) {
+Application.Controllers.controller('login-controller', ['$scope', '$location', 'authenticate', function ($scope, $location, authenticate) {
     $scope.login = new rateastogie.LogIn();
     $scope.currentUser = null;
 
