@@ -47,11 +47,12 @@ rateastogie.Cigar = function() {
     self.Strength = "";
     self.Appearance = "";
     self.Flavor = "";
-    self.Draw = "";
-    self.Burn = "";
+    self.Smoke = "";
     self.OverallImpression = "";
     self.AverageRating = 0;
     self.NumberOfReviews = 0;
+    self.DateCreated = "";
+    self.DateUpdated = "";
 };
 
 rateastogie.Review = function() {
@@ -64,10 +65,8 @@ rateastogie.Review = function() {
     self.Appearance = "";
     self.FlavorRating = 0;
     self.Flavor = "";
-    self.DrawRating = 0;
-    self.Draw = "";
-    self.BurnRating = 0;
-    self.Burn = "";
+    self.SmokeRating = 0;
+    self.Smoke = "";
     self.OverallImpressionRating = 0;
     self.OverallImpression = "";
     self.Comments = "";
