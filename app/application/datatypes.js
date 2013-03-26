@@ -37,6 +37,7 @@ rateastogie.Cigar = function() {
     self.Country = "";
     self.Manufacturer = "";
     self.Brand = "";
+    self.Name = "";
     self.Shape = "";
     self.RingGauge = "";
     self.Length = "";

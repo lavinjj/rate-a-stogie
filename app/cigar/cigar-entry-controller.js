@@ -1,6 +1,6 @@
 'use strict';
 
-Application.Controllers.controller('cigar-entry-controller', ['$scope', '$location', 'UserResource', 'authenticate', function ($scope, $location, CigarResource, authenticate) {
+Application.Controllers.controller('cigar-entry-controller', ['$scope', '$location', 'CigarResource', 'authenticate', function ($scope, $location, CigarResource, authenticate) {
     $scope.Cigar = new rateastogie.Cigar();
     $scope.errorMessages = [];
 
@@ -46,4 +46,14 @@ Application.Controllers.controller('cigar-entry-controller', ['$scope', '$locati
             $location.path('/');
         });
     };
+
+    $scope.init = function () {
+        if (!authenticate.isUserLoggedIn()) {
+            $location.path('/');
+        }
+
+        $scope.User = authenticate.currentUser;
+    };
+
+    $scope.init();
 }]);
