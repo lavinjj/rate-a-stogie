@@ -4,7 +4,7 @@
             <label class="control-label" for="Country">Country</label>
 
             <div class="controls">
-                <input class="input-large" id="Country" name="Country" type="text" required
+                <input class="input-large" id="Country" name="Country" type="hidden" ui-select2="{tags:{{countries}},tokenSeparators: [',', ' ']}" required
                        ng-model="Cigar.Country">
             </div>
         </div>
@@ -34,7 +34,7 @@
             <label class="control-label" for="Shape">Shape</label>
 
             <div class="controls">
-                <input class="input-large" id="Shape" name="Shape" type="text" ng-model="Cigar.Shape">
+                <input class="input-large" id="Shape" name="Shape" type="hidden" ui-select2="{tags:{{shapes}},tokenSeparators: [',', ' ']}" ng-model="Cigar.Shape">
             </div>
         </div>
         <div class="control-group">
@@ -55,35 +55,35 @@
             <label class="control-label" for="Wrapper">Wrapper</label>
 
             <div class="controls">
-                <input class="input-large" id="Wrapper" name="Wrapper" type="text" ng-model="Cigar.Wrapper">
+                <input class="input-large" id="Wrapper" name="Wrapper" type="hidden" ui-select2="{tags:{{wrappers}},tokenSeparators: [',', ' ']}" ng-model="Cigar.Wrapper">
             </div>
         </div>
         <div class="control-group">
             <label class="control-label" for="Binder">Binder</label>
 
             <div class="controls">
-                <input class="input-large" id="Binder" name="Binder" type="text" ng-model="Cigar.Binder">
+                <input class="input-large" id="Binder" name="Binder" type="hidden" ui-select2="{tags:{{binders}},tokenSeparators: [',', ' ']}" ng-model="Cigar.Binder">
             </div>
         </div>
         <div class="control-group">
             <label class="control-label" for="Filler">Filler</label>
 
             <div class="controls">
-                <input class="input-large" id="Filler" name="Filler" type="text" ng-model="Cigar.Filler">
+                <input class="input-large" id="Filler" name="Filler" type="hidden" ui-select2="{tags:{{fillers}},tokenSeparators: [',', ' ']}" ng-model="Cigar.Filler">
             </div>
         </div>
         <div class="control-group">
             <label class="control-label" for="Color">Color</label>
 
             <div class="controls">
-                <input class="input-large" id="Color" name="Color" type="text" ng-model="Cigar.Color">
+                <input class="input-large" id="Color" name="Color" type="hidden" ui-select2="{tags:{{colors}},tokenSeparators: [',', ' ']}" ng-model="Cigar.Color">
             </div>
         </div>
         <div class="control-group">
             <label class="control-label" for="Strength">Strength</label>
 
             <div class="controls">
-                <input class="input-large" id="Strength" name="Strength" type="text" ng-model="Cigar.Strength">
+                <input class="input-large" id="Strength" name="Strength" ui-select2="{tags:{{strengths}},tokenSeparators: [',', ' ']}" ng-model="Cigar.Strength">
             </div>
         </div>
         <div class="control-group">
