@@ -1,6 +1,6 @@
 'use strict';
 
-Application.Controllers.controller('add-rating-controller', ['$scope', '$routeParams', '$location', 'CigarResource', 'RatingResource', 'authenticate', function ($scope, $routeParams, $location, CigarResource, RatingResource, authenticate) {
+Application.Controllers.controller('add-rating-controller', ['$scope', '$routeParams', '$location', 'CigarResource', 'RatingResource', 'UserResource', 'authenticate', function ($scope, $routeParams, $location, CigarResource, RatingResource, UserResource, authenticate) {
     $scope.Cigar = null;
     $scope.Rating = new rateastogie.Rating();
 
@@ -15,23 +15,29 @@ Application.Controllers.controller('add-rating-controller', ['$scope', '$routePa
             $scope.Rating.OverallImpressionRating;
         $scope.Rating.ReviewDate = new Date();
 
+        var rating = new RatingResource($scope.Rating);
+
+        rating.$save();
+
         if($scope.Cigar.AverageRating > 0){
             $scope.Cigar.AverageRating = (($scope.Cigar.AverageRating +
                 $scope.Rating.Rating) / 2.0);
         } else {
             $scope.Cigar.AverageRating = $scope.Rating.Rating;
         }
-
-        var rating = new RatingResource($scope.Rating);
-
-        rating.$save();
-
         $scope.Cigar.DateUpdated = new Date();
 
         var cigar = new CigarResource($scope.Cigar);
 
-        cigar.$update(function(){
-           $location.path("/");
+        cigar.$update();
+
+        authenticate.currentUser.Ratings = authenticate.currentUser.Ratings + 1;
+        authenticate.currentUser.DateUpdated = new Date();
+
+        var user = new UserResource(authenticate.currentUser);
+
+        user.$update(function(){
+            $location.path("/");
         });
     };
 

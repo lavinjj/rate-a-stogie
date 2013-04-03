@@ -16,7 +16,7 @@
     },
     {
         "key":"_HighestRated_",
-        "value":"Highest Rated Cigars",
+        "value":"Highest Rated Stogies",
         "description":"Top Rated Recipe Title"
     },
     {

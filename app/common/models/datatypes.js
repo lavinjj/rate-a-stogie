@@ -27,6 +27,7 @@ rateastogie.User = function () {
     self.Avatar = "";
     self.Photo = "";
     self.Password = "";
+    self.Ratings = 0;
     self.DateJoined = "";
     self.DateLastActivity = "";
     self.userIsAdmin = false;

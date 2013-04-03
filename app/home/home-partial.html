@@ -38,10 +38,18 @@
         <div class="span4">
             <h2 data-i18n="_TopContributorTitle_">Highest Contributors</h2>
 
-            <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris
-                condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis
-                euismod. Donec
-                sed odio dui. </p>
+            <table class="table table-bordered">
+                <thead>
+                <td>User Name</td>
+                <td>Rating</td>
+                </thead>
+                <tbody>
+                <tr ng-repeat="user in TopContributors | limitTo:5">
+                    <td ng-bind="user.UserName"></td>
+                    <td ng-bind="user.Ratings"></td>
+                </tr>
+                </tbody>
+            </table>
         </div>
         <div class="span4">
             <h2 data-i18n="_NewReviews_">New Reviews</h2>
