@@ -56,7 +56,7 @@ rateastogie.Cigar = function() {
     self.DateUpdated = "";
 };
 
-rateastogie.Review = function() {
+rateastogie.Rating = function() {
     var self = this;
     self.CigarId = "";
     self.UserId = "";

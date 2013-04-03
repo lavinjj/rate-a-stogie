@@ -1,0 +1,161 @@
+<div class="row-fluid" ng-controller="add-rating-controller">
+    <div class="span5 form-horizontal">
+        <div class="control-group">
+            <label class="control-label">Brand </label>
+
+            <div class="controls">
+                <div ng-bind="Cigar.Brand"></div>
+            </div>
+        </div>
+        <div class="control-group">
+            <label class="control-label">Name </label>
+
+            <div class="controls">
+                <div ng-bind="Cigar.Name"></div>
+            </div>
+        </div>
+        <div class="control-group">
+            <label class="control-label">Shape </label>
+
+            <div class="controls">
+                <div ng-bind="Cigar.Shape"></div>
+            </div>
+        </div>
+        <div class="control-group">
+            <label class="control-label">Size </label>
+
+            <div class="controls">
+                <span ng-bind="Cigar.Length"></span> x <span ng-bind="Cigar.RingGauge"></span>
+            </div>
+        </div>
+        <div class="control-group">
+            <label class="control-label">Wrapper </label>
+
+            <div class="controls">
+                <div ng-bind="Cigar.Wrapper"></div>
+            </div>
+        </div>
+        <div class="control-group">
+            <label class="control-label">Binder </label>
+
+            <div class="controls">
+                <div ng-bind="Cigar.Binder"></div>
+            </div>
+        </div>
+        <div class="control-group">
+            <label class="control-label">Filler </label>
+
+            <div class="controls">
+                <div ng-bind="Cigar.Filler"></div>
+            </div>
+        </div>
+        <div class="control-group">
+            <label class="control-label">Color </label>
+
+            <div class="controls">
+                <div ng-bind="Cigar.Color"></div>
+            </div>
+        </div>
+        <div class="control-group">
+            <label class="control-label">Strength </label>
+
+            <div class="controls">
+                <div ng-bind="Cigar.Strength"></div>
+            </div>
+        </div>
+        <div class="control-group">
+            <label class="control-label">Appearance </label>
+
+            <div class="controls">
+                <div ng-bind="Cigar.Appearance"></div>
+            </div>
+        </div>
+        <div class="control-group">
+            <label class="control-label">Flavor </label>
+
+            <div class="controls">
+                <div ng-bind="Cigar.Flavor"></div>
+            </div>
+        </div>
+        <div class="control-group">
+            <label class="control-label">Smoke </label>
+
+            <div class="controls">
+                <div ng-bind="Cigar.Smoke"></div>
+            </div>
+        </div>
+    </div>
+    <form name="ratingForm" class="span6 form-horizontal">
+        <h2>The 100 Point Cigar Ranking System</h2>
+        <div>There are four components used in the system developed by CIGAR AFICIONADO™ for assigning a rating number to a cigar:</div>
+        <div>&nbsp;</div>
+        <div class="control-group">
+            <label class="control-label">Appearance and Construction <div ng-bind="Rating.AppearanceRating"></div></label>
+
+            <div class="controls">
+                <div>(15 of the possible 100 points)</div>
+                <div>Visually, a premium cigar should have a smooth, flawless wrapper and be consistent in color and shape. When held, it should feel firm and give off a slightly oily moistness. Points are deducted if the wrapper has areas of large veins or if the cigar feels dry or firmer in some parts than others.</div>
+                <div>&nbsp;</div>
+                <div id="AppearanceRating" slider min="0" max="15" ng-model="Rating.AppearanceRating"></div>
+                <div>&nbsp;</div>
+                <textarea class="input-xxlarge" ng-model="Rating.Appearance" height="3"></textarea>
+            </div>
+        </div>
+        <div>&nbsp;</div>
+        <div class="control-group">
+            <label class="control-label">Flavor <div ng-bind="Rating.FlavorRating"></div></label>
+
+            <div class="controls">
+                <div>(25 of the possible 100 points)</div>
+                <div>Although each premium cigar has a distinctive taste, all premium cigars should taste smooth and rich. If a cigar leaves a bitter or harsh taste on your lips, tongue or mouth, points are deducted.</div>
+                <div>&nbsp;</div>
+                <div id="FlavorRating" slider min="0" max="25" ng-model="Rating.FlavorRating"></div>
+                <div>&nbsp;</div>
+                <textarea class="input-xxlarge" ng-model="Rating.Flavor" height="3"></textarea>
+            </div>
+        </div>
+        <div>&nbsp;</div>
+        <div class="control-group">
+            <label class="control-label">Smoking Characteristics <div ng-bind="Rating.SmokeRating"></div></label>
+
+            <div class="controls">
+                <div>(25 of the possible 100 points)</div>
+                <div>A perfectly made and stored premium cigar should light and burn easily and evenly. The draw should be comfortable and the same throughout the cigar. The smoke should be cool in your mouth. Points are deducted if the cigar burns too quickly, if it burns faster on one side, and if you have to pull hard to get a mouthful of smoke or if that smoke is unpleasantly hot.</div>
+                <div>&nbsp;</div>
+                <div id="SmokeRating" slider min="0" max="25" ng-model="Rating.SmokeRating"></div>
+                <div>&nbsp;</div>
+                <textarea class="input-xxlarge" ng-model="Rating.Smoke" height="3"></textarea>
+            </div>
+        </div>
+        <div>&nbsp;</div>
+        <div class="control-group">
+            <label class="control-label">Overall Impression <div ng-bind="Rating.OverallImpressionRating"></div></label>
+
+            <div class="controls">
+                <div>(35 of the possible 100 points)</div>
+                <div>This is the most heavily weighted category because it is the most important.</div>
+                <div>&nbsp;</div>
+                <div id="OverallImpressionRating" slider min="0" max="35" ng-model="Rating.OverallImpressionRating"></div>
+                <div>&nbsp;</div>
+                <textarea class="input-xxlarge" ng-model="Rating.OverallImpression" height="3"></textarea>
+            </div>
+        </div>
+        <div>&nbsp;</div>
+        <div class="control-group">
+            <label class="control-label">Additional Comments</label>
+
+            <div class="controls">
+                <textarea class="input-xxlarge" ng-model="Rating.Comments" height="3"></textarea>
+            </div>
+        </div>
+        <div>&nbsp;</div>
+        <div class="control-group">
+            <label class="control-label"></label>
+
+            <div class="controls">
+                <button ng-click="saveRating()" ng-disabled="registerForm.$invalid" class="btn btn-large">Save</button>
+                <a href="#/" class="btn btn-large">Cancel</a>
+            </div>
+        </div>
+    </form>
+</div>
