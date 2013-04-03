@@ -4,8 +4,9 @@
             <label class="control-label" for="Country">Country</label>
 
             <div class="controls">
-                <input class="input-large" id="Country" name="Country" type="hidden" ui-select2="{tags:{{countries}},tokenSeparators: [',', ' ']}" required
-                       ng-model="Cigar.Country">
+                <select class="input-large" id="Country" name="Country" ui-select2="{tokenSeparators: [',', ' ']}" ng-model="Cigar.Country">
+                    <option ng-repeat="country in countries" value="{{country}}">{{country}}</option>
+                </select>
             </div>
         </div>
         <div class="control-group">
@@ -34,7 +35,9 @@
             <label class="control-label" for="Shape">Shape</label>
 
             <div class="controls">
-                <input class="input-large" id="Shape" name="Shape" type="hidden" ui-select2="{tags:{{shapes}},tokenSeparators: [',', ' ']}" ng-model="Cigar.Shape">
+                <select class="input-large" id="Shape" name="Shape" ui-select2="{tokenSeparators: [',', ' ']}" ng-model="Cigar.Shape">
+                    <option ng-repeat="shape in shapes" value="{{shape}}">{{shape}}</option>
+                </select>
             </div>
         </div>
         <div class="control-group">
@@ -55,63 +58,73 @@
             <label class="control-label" for="Wrapper">Wrapper</label>
 
             <div class="controls">
-                <input class="input-large" id="Wrapper" name="Wrapper" type="hidden" ui-select2="{tags:{{wrappers}},tokenSeparators: [',', ' ']}" ng-model="Cigar.Wrapper">
+                <select class="input-large" id="Wrapper" name="Wrapper" multiple ui-select2="{tokenSeparators: [',', ' ']}" ng-model="Cigar.Wrapper">
+                    <option ng-repeat="wrapper in wrappers" value="{{wrapper}}">{{wrapper}}</option>
+                </select>
             </div>
         </div>
         <div class="control-group">
             <label class="control-label" for="Binder">Binder</label>
 
             <div class="controls">
-                <input class="input-large" id="Binder" name="Binder" type="hidden" ui-select2="{tags:{{binders}},tokenSeparators: [',', ' ']}" ng-model="Cigar.Binder">
+                <select class="input-large" id="Binder" name="Binder" multiple ui-select2="{tokenSeparators: [',', ' ']}" ng-model="Cigar.Binder">
+                    <option ng-repeat="binder in binders" value="{{binder}}">{{binder}}</option>
+                </select>
             </div>
         </div>
         <div class="control-group">
             <label class="control-label" for="Filler">Filler</label>
 
             <div class="controls">
-                <input class="input-large" id="Filler" name="Filler" type="hidden" ui-select2="{tags:{{fillers}},tokenSeparators: [',', ' ']}" ng-model="Cigar.Filler">
+                <select class="input-large" id="Filler" name="Filler" multiple ui-select2="{tokenSeparators: [',', ' ']}" ng-model="Cigar.Filler">
+                    <option ng-repeat="filler in fillers" value="{{filler}}">{{filler}}</option>
+                </select>
             </div>
         </div>
         <div class="control-group">
             <label class="control-label" for="Color">Color</label>
 
             <div class="controls">
-                <input class="input-large" id="Color" name="Color" type="hidden" ui-select2="{tags:{{colors}},tokenSeparators: [',', ' ']}" ng-model="Cigar.Color">
+                <select class="input-large" id="Color" name="Color" ui-select2="{tokenSeparators: [',', ' ']}" ng-model="Cigar.Color">
+                    <option ng-repeat="color in colors" value="{{color}}">{{color}}</option>
+                </select>
             </div>
         </div>
         <div class="control-group">
             <label class="control-label" for="Strength">Strength</label>
 
             <div class="controls">
-                <input class="input-large" id="Strength" name="Strength" ui-select2="{tags:{{strengths}},tokenSeparators: [',', ' ']}" ng-model="Cigar.Strength">
+                <select class="input-large" id="Strength" name="Strength" ui-select2="{tokenSeparators: [',', ' ']}" ng-model="Cigar.Strength">
+                    <option ng-repeat="strength in strengths" value="{{strength}}">{{strength}}</option>
+                </select>
             </div>
         </div>
         <div class="control-group">
             <label class="control-label" for="Appearance">Appearance</label>
 
             <div class="controls">
-                <textarea id="Appearance" name="Appearance" ng-model="Cigar.Appearance" class="input-block-level"></textarea>
+                <textarea id="Appearance" name="Appearance" ng-model="Cigar.Appearance" class="input-xxlarge"></textarea>
             </div>
         </div>
         <div class="control-group">
             <label class="control-label" for="Flavor">Flavor</label>
 
             <div class="controls">
-                <textarea id="Flavor" name="Flavor" ng-model="Cigar.Flavor" class="input-block-level"></textarea>
+                <textarea id="Flavor" name="Flavor" ng-model="Cigar.Flavor" class="input-xxlarge"></textarea>
             </div>
         </div>
         <div class="control-group">
             <label class="control-label" for="Smoke">Smoke</label>
 
             <div class="controls">
-                <textarea id="Smoke" name="Smoke" ng-model="Cigar.Smoke" class="input-block-level"></textarea>
+                <textarea id="Smoke" name="Smoke" ng-model="Cigar.Smoke" class="input-xxlarge"></textarea>
             </div>
         </div>
         <div class="control-group">
             <label class="control-label" for="OverallImpression">Overall Impression</label>
 
             <div class="controls">
-                <textarea id="OverallImpression" name="OverallImpression" ng-model="Cigar.OverallImpression" class="input-block-level"></textarea>
+                <textarea id="OverallImpression" name="OverallImpression" ng-model="Cigar.OverallImpression" class="input-xxlarge"></textarea>
             </div>
         </div>
         <div class="alert" ng-show="errorsExist()">

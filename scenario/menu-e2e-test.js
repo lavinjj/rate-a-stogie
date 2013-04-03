@@ -23,9 +23,9 @@ describe('The menu', function(){
         expect(browser().location().path()).toBe('/contact');
     });
 
-    it('should navigate to the adjuncts page', function() {
+    it('should navigate to the cigars page', function() {
         element('#adjunctsLink').click();
-        expect(browser().location().path()).toBe('/adjuncts');
+        expect(browser().location().path()).toBe('/cigars');
     });
 
     it('should navigate to the equipment page', function() {

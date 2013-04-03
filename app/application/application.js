@@ -24,5 +24,6 @@ angular.module('rateastogie', ['ui', 'ui.bootstrap', 'ui.bootstrap.carousel', 'u
         when('/myemail', {templateUrl:'user/user-change-email-partial.html'}).
         when('/mypassword', {templateUrl:'user/user-change-password-partial.html'}).
         when('/cigar', {templateUrl:'cigar/cigar-entry-partial.html'}).
+        when('/cigarlist', {templateUrl:'cigar/cigar-list-partial.html'}).
         otherwise({templateUrl: 'error/error-partial.html'});
   }]);
