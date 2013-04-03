@@ -24,7 +24,7 @@ Application.Controllers.controller('user-change-email-controller', ['$scope', '$
     $scope.changeEmail = function () {
         var brewer = new UserResource($scope.User);
 
-        brewer.$save(function (brewer) {
+        brewer.$update(function (brewer) {
             $location.path('/');
         });
     };

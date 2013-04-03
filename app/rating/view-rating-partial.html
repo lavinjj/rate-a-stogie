@@ -1,0 +1,109 @@
+<div class="row-fluid" ng-controller="view-rating-controller">
+    <div class="offset3 span6 form-horizontal">
+        <div class="control-group">
+            <label class="control-label">User </label>
+
+            <div class="controls">
+                <div ng-bind="Rating.UserName"></div>
+            </div>
+        </div>
+        <div class="control-group">
+            <label class="control-label">Brand </label>
+
+            <div class="controls">
+                <div ng-bind="Cigar.Brand"></div>
+            </div>
+        </div>
+        <div class="control-group">
+            <label class="control-label">Name </label>
+
+            <div class="controls">
+                <div ng-bind="Cigar.Name"></div>
+            </div>
+        </div>
+        <div class="control-group">
+            <label class="control-label">Shape </label>
+
+            <div class="controls">
+                <div ng-bind="Cigar.Shape"></div>
+            </div>
+        </div>
+        <div class="control-group">
+            <label class="control-label">Size </label>
+
+            <div class="controls">
+                <span ng-bind="Cigar.Length"></span> x <span ng-bind="Cigar.RingGauge"></span>
+            </div>
+        </div>
+        <div class="control-group">
+            <label class="control-label">Wrapper </label>
+
+            <div class="controls">
+                <div ng-bind="Cigar.Wrapper"></div>
+            </div>
+        </div>
+        <div class="control-group">
+            <label class="control-label">Binder </label>
+
+            <div class="controls">
+                <div ng-bind="Cigar.Binder"></div>
+            </div>
+        </div>
+        <div class="control-group">
+            <label class="control-label">Filler </label>
+
+            <div class="controls">
+                <div ng-bind="Cigar.Filler"></div>
+            </div>
+        </div>
+        <div class="control-group">
+            <label class="control-label">Color </label>
+
+            <div class="controls">
+                <div ng-bind="Cigar.Color"></div>
+            </div>
+        </div>
+        <div class="control-group">
+            <label class="control-label">Strength </label>
+
+            <div class="controls">
+                <div ng-bind="Cigar.Strength"></div>
+            </div>
+        </div>
+        <div class="control-group">
+            <label class="control-label">Appearance </label>
+
+            <div class="controls">
+                <span ng-bind="Rating.AppearanceRating"></span> - <span ng-bind="Rating.Appearance"></span>
+            </div>
+        </div>
+        <div class="control-group">
+            <label class="control-label">Flavor </label>
+
+            <div class="controls">
+                <span ng-bind="Rating.FlavorRating"></span> - <span ng-bind="Rating.Flavor"></span>
+            </div>
+        </div>
+        <div class="control-group">
+            <label class="control-label">Smoke </label>
+
+            <div class="controls">
+                <span ng-bind="Rating.SmokeRating"></span> - <span ng-bind="Rating.Smoke"></span>
+            </div>
+        </div>
+        <div class="control-group">
+            <label class="control-label">Overall Impression </label>
+
+            <div class="controls">
+                <span ng-bind="Rating.OverallImpressionRating"></span> - <span ng-bind="Rating.OverallImpression"></span>
+            </div>
+        </div>
+        <div class="control-group">
+            <label class="control-label">Comments </label>
+
+            <div class="controls">
+                <span ng-bind="Rating.Comments"></span>
+            </div>
+        </div>
+    </div>
+</div>

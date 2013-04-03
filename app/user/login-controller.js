@@ -1,11 +1,17 @@
 'use strict';
 
-Application.Controllers.controller('login-controller', ['$scope', '$location', 'authenticate', function ($scope, $location, authenticate) {
+Application.Controllers.controller('login-controller', ['$scope', '$location', 'authenticate', 'UserResource', function ($scope, $location, authenticate, UserResource) {
     $scope.login = new rateastogie.LogIn();
     $scope.currentUser = null;
 
     $scope.$on('USER_UPDATED', function () {
         $scope.currentUser = authenticate.currentUser;
+
+        var brewer = new UserResource($scope.currentUser);
+
+        $scope.currentUser.DateLastActivity = new Date();
+
+        brewer.$update();
     });
 
     $scope.login = function () {

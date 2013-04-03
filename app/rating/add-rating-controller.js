@@ -5,6 +5,11 @@ Application.Controllers.controller('add-rating-controller', ['$scope', '$routePa
     $scope.Rating = new rateastogie.Rating();
 
     $scope.saveRating = function () {
+        $scope.Rating.CigarId = $scope.Cigar._id.$oid;
+        $scope.Rating.Brand = $scope.Cigar.Brand;
+        $scope.Rating.Name = $scope.Cigar.Name;
+        $scope.Rating.UserId = authenticate.currentUser._id.$oid;
+        $scope.Rating.UserName = authenticate.currentUser.UserName;
         $scope.Rating.Rating = $scope.Rating.AppearanceRating +
             $scope.Rating.FlavorRating + $scope.Rating.SmokeRating +
             $scope.Rating.OverallImpressionRating;
@@ -21,6 +26,8 @@ Application.Controllers.controller('add-rating-controller', ['$scope', '$routePa
 
         rating.$save();
 
+        $scope.Cigar.DateUpdated = new Date();
+
         var cigar = new CigarResource($scope.Cigar);
 
         cigar.$update(function(){
@@ -35,8 +42,6 @@ Application.Controllers.controller('add-rating-controller', ['$scope', '$routePa
 
         CigarResource.getById($routeParams.id, function(cigar){
             $scope.Cigar = cigar;
-            $scope.Rating.CigarId = $scope.Cigar._id.$oid;
-            $scope.Rating.UserId = authenticate.currentUser._id.$oid;
         });
     };
 

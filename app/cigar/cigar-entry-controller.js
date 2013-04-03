@@ -15,29 +15,25 @@ Application.Controllers.controller('cigar-entry-controller', ['$scope', '$locati
         var result = false;
         $scope.errorMessages = [];
 
-        if ($scope.registerForm.UserName.$error.uniqueUserName && !$scope.registerForm.UserName.$pristine) {
+        if ($scope.createForm.Manufacturer.$error.required && !$scope.createForm.Manufacturer.$pristine) {
             result = true;
-            $scope.errorMessages.push('That user name is already in use.')
+            $scope.errorMessages.push('Manufacturer is required.')
         }
-        if ($scope.registerForm.UserName.$error.required && !$scope.registerForm.UserName.$pristine) {
+        if ($scope.createForm.Brand.$error.required && !$scope.createForm.Brand.$pristine) {
             result = true;
-            $scope.errorMessages.push('User Name is required.')
+            $scope.errorMessages.push('Brand is required.')
         }
-        if ($scope.registerForm.FirstName.$error.required && !$scope.registerForm.FirstName.$pristine) {
+        if ($scope.createForm.Name.$error.required && !$scope.createForm.Name.$pristine) {
             result = true;
-            $scope.errorMessages.push('First Name is required.')
+            $scope.errorMessages.push('Name is required.')
         }
-        if ($scope.registerForm.LastName.$error.required && !$scope.registerForm.LastName.$pristine) {
+        if ($scope.createForm.RingGauge.$error.required && !$scope.createForm.RingGauge.$pristine) {
             result = true;
-            $scope.errorMessages.push('Last Name is required.')
+            $scope.errorMessages.push('Ring Gauge is required.')
         }
-        if ($scope.registerForm.Email.$error.uniqueEmail && !$scope.registerForm.Email.$pristine) {
+        if ($scope.createForm.Length.$error.required && !$scope.createForm.Length.$pristine) {
             result = true;
-            $scope.errorMessages.push('That Email already has an account.')
-        }
-        if ($scope.registerForm.Password.$error.equal && !$scope.registerForm.Password.$pristine) {
-            result = true;
-            $scope.errorMessages.push('Passwords does not match.')
+            $scope.errorMessages.push('Length is required.')
         }
 
         return result;

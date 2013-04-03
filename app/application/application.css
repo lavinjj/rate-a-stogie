@@ -1,6 +1,6 @@
 /* app css stylesheet */
 .gridStyle {
-    border: 1px solid rgb(212,212,212);
+    border: 1px solid rgb(212, 212, 212);
     height: 300px;
 }
 
@@ -16,7 +16,7 @@ input, button, select, textarea {
     -webkit-border-radius: 4px;
     -moz-border-radius: 4px;
     border-radius: 4px;
- }
+}
 
 .mainCarousel {
     width: 750px;

@@ -23,7 +23,7 @@ Application.Controllers.controller('user-change-password-controller', ['$scope',
 
         brewer.Password = authenticate.hashPassword($scope.password, brewer.DateJoined.valueOf());
 
-        brewer.$save(function (brewer) {
+        brewer.$update(function (brewer) {
             $location.path('/');
         });
     };

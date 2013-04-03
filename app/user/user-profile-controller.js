@@ -32,7 +32,7 @@ Application.Controllers.controller('user-profile-controller', ['$scope', '$locat
     $scope.register = function () {
         var user = new UserResource($scope.User);
 
-        user.$save(function (user) {
+        user.$update(function (user) {
             $location.path('/');
         });
     };
