@@ -1,6 +1,6 @@
 'use strict';
 
-Application.Controllers.controller('cigar-entry-controller', ['$scope', '$location', 'CigarResource', 'authenticate', function ($scope, $location, CigarResource, authenticate) {
+Application.Controllers.controller('add-cigar-controller', ['$scope', '$location', 'CigarResource', 'authenticate', function ($scope, $location, CigarResource, authenticate) {
     $scope.Cigar = new rateastogie.Cigar();
     $scope.errorMessages = [];
     $scope.shapes = ['Churchill', 'Cigarillos', 'Corona', 'Corona Extra', 'Corona Gigante', 'Corona Grande', 'Double Corona', 'Gigante', 'Long Corona', 'Long Panatela', 'Lonsdale', 'Panatela', 'Petit Corona', 'Presidente', 'Robusto', 'Robusto Gordo', 'Rothschild', 'Salomon', 'Short Gordo', 'Short Panatela', 'Slim Panatela', 'Small Panatela', 'Toro', 'Toro Gordo', 'Torpedo'];

@@ -3,6 +3,8 @@
 Application.Controllers.controller('add-rating-controller', ['$scope', '$routeParams', '$location', 'CigarResource', 'RatingResource', 'UserResource', 'authenticate', function ($scope, $routeParams, $location, CigarResource, RatingResource, UserResource, authenticate) {
     $scope.Cigar = null;
     $scope.Rating = new rateastogie.Rating();
+    $scope.existingRating = false;
+    $scope.originalRating = 0;
 
     $scope.saveRating = function () {
         $scope.Rating.CigarId = $scope.Cigar._id.$oid;
@@ -10,28 +12,41 @@ Application.Controllers.controller('add-rating-controller', ['$scope', '$routePa
         $scope.Rating.Name = $scope.Cigar.Name;
         $scope.Rating.UserId = authenticate.currentUser._id.$oid;
         $scope.Rating.UserName = authenticate.currentUser.UserName;
+        $scope.Rating.ReviewDate = new Date();
         $scope.Rating.Rating = $scope.Rating.AppearanceRating +
             $scope.Rating.FlavorRating + $scope.Rating.SmokeRating +
             $scope.Rating.OverallImpressionRating;
-        $scope.Rating.ReviewDate = new Date();
 
         var rating = new RatingResource($scope.Rating);
 
-        rating.$save();
+        rating.$saveOrUpdate();
 
-        if($scope.Cigar.AverageRating > 0){
-            $scope.Cigar.AverageRating = (($scope.Cigar.AverageRating +
-                $scope.Rating.Rating) / 2.0);
+        if(!$scope.existingRating) {
+            if($scope.Cigar.AverageRating > 0){
+                $scope.Cigar.AverageRating = (($scope.Cigar.AverageRating +
+                    $scope.Rating.Rating) / 2.0);
+            } else {
+                $scope.Cigar.AverageRating = $scope.Rating.Rating;
+            }
+            $scope.Cigar.NumberOfReviews = $scope.Cigar.NumberOfReviews + 1;
         } else {
-            $scope.Cigar.AverageRating = $scope.Rating.Rating;
+            var temp = $scope.Cigar.AverageRating * 2;
+
+            temp = temp - $scope.originalRating
+
+            $scope.Cigar.AverageRating = ((temp +
+                $scope.Rating.Rating) / 2.0);
         }
+
         $scope.Cigar.DateUpdated = new Date();
 
         var cigar = new CigarResource($scope.Cigar);
 
         cigar.$update();
 
-        authenticate.currentUser.Ratings = authenticate.currentUser.Ratings + 1;
+        if(!$scope.existingRating) {
+            authenticate.currentUser.Ratings = authenticate.currentUser.Ratings + 1;
+        }
         authenticate.currentUser.DateUpdated = new Date();
 
         var user = new UserResource(authenticate.currentUser);
@@ -48,6 +63,12 @@ Application.Controllers.controller('add-rating-controller', ['$scope', '$routePa
 
         CigarResource.getById($routeParams.id, function(cigar){
             $scope.Cigar = cigar;
+
+            RatingResource.query({"CigarId": cigar._id.$oid, "UserId": authenticate.currentUser._id.$oid}, function(ratings){
+               $scope.Rating = ratings[0];
+                $scope.existingRating = true;
+                $scope.originalRating = $scope.Rating.Rating;
+            });
         });
     };
 

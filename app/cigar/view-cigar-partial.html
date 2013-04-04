@@ -1,0 +1,131 @@
+<div class="row-fluid" ng-controller="view-cigar-controller">
+    <form name="createForm" class="offset3 span5 form-horizontal">
+        <div class="control-group">
+            <label class="control-label" >Country</label>
+
+            <div class="controls">
+                <div ng-bind="Cigar.Country"></div>
+            </div>
+        </div>
+        <div class="control-group">
+            <label class="control-label" >Manufacturer</label>
+
+            <div class="controls">
+                <div ng-bind="Cigar.Manufacturer"></div>
+            </div>
+        </div>
+        <div class="control-group">
+            <label class="control-label" >Brand</label>
+
+            <div class="controls">
+                <div ng-bind="Cigar.Brand"></div>
+            </div>
+        </div>
+        <div class="control-group">
+            <label class="control-label" >Name</label>
+
+            <div class="controls">
+                <div ng-bind="Cigar.Name"></div>
+            </div>
+        </div>
+        <div class="control-group">
+            <label class="control-label" >Shape</label>
+
+            <div class="controls">
+                <div ng-bind="Cigar.Shape"></div>
+            </div>
+        </div>
+        <div class="control-group">
+            <label class="control-label" >Size</label>
+
+            <div class="controls">
+                <span ng-bind="Cigar.Length"></span> X <span ng-bind="Cigar.RingGauge"></span>
+            </div>
+        </div>
+        <div class="control-group">
+            <label class="control-label" >Wrapper</label>
+
+            <div class="controls">
+                    <div ng-bind="Cigar.Wrapper"></div>
+            </div>
+        </div>
+        <div class="control-group">
+            <label class="control-label" >Binder</label>
+
+            <div class="controls">
+                    <div ng-bind="Cigar.Binder"></div>
+            </div>
+        </div>
+        <div class="control-group">
+            <label class="control-label" >Filler</label>
+
+            <div class="controls">
+                    <div ng-bind="Cigar.Filler"></div>
+            </div>
+        </div>
+        <div class="control-group">
+            <label class="control-label" >Color</label>
+
+            <div class="controls">
+                    <div ng-bind="Cigar.Color"></div>
+            </div>
+        </div>
+        <div class="control-group">
+            <label class="control-label" >Strength</label>
+
+            <div class="controls">
+                    <div ng-bind="Cigar.Strength"></div>
+            </div>
+        </div>
+        <div class="control-group">
+            <label class="control-label" >Appearance</label>
+
+            <div class="controls">
+                    <div ng-bind="Cigar.Appearance"></div>
+            </div>
+        </div>
+        <div class="control-group">
+            <label class="control-label" >Flavor</label>
+
+            <div class="controls">
+                    <div ng-bind="Cigar.Flavor"></div>
+            </div>
+        </div>
+        <div class="control-group">
+            <label class="control-label" >Smoke</label>
+
+            <div class="controls">
+                    <div ng-bind="Cigar.Smoke"></div>
+            </div>
+        </div>
+        <div class="control-group">
+            <label class="control-label" >Overall Impression</label>
+
+            <div class="controls">
+                    <div ng-bind="Cigar.OverallImpression"></div>
+            </div>
+        </div>
+        <div class="control-group">
+            <label class="control-label" >Average Rating</label>
+
+            <div class="controls">
+                <div ng-bind="Cigar.AverageRating"></div>
+            </div>
+        </div>
+        <div class="control-group">
+            <label class="control-label" >Number of Reviews</label>
+
+            <div class="controls">
+                <div ng-bind="Cigar.NumberOfReviews"></div>
+            </div>
+        </div>
+        <div class="control-group">
+            <label class="control-label"></label>
+
+            <div class="controls">
+                <button ng-click="rateCigar()" class="btn btn-large">Rate It</button>
+                <a href="#/" class="btn btn-large">Cancel</a>
+            </div>
+        </div>
+    </form>
+</div>
