@@ -23,6 +23,7 @@ angular.module('rateastogie', ['ui', 'ui.bootstrap', 'ui.bootstrap.carousel', 'u
         when('/myprofile', {templateUrl:'user/user-profile-partial.html'}).
         when('/myemail', {templateUrl:'user/user-change-email-partial.html'}).
         when('/mypassword', {templateUrl:'user/user-change-password-partial.html'}).
+        when('/myreviews', {templateUrl:'rating/rating-list-partial.html'}).
         when('/cigar', {templateUrl:'cigar/add-cigar-partial.html'}).
         when('/viewcigar/:id', {templateUrl:'cigar/view-cigar-partial.html'}).
         when('/cigarlist', {templateUrl:'cigar/cigar-list-partial.html'}).

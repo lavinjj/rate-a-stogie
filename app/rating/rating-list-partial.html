@@ -1,0 +1,13 @@
+<div class="container-fluid" ng-controller="rating-list-controller">
+    <div class="row-fluid">
+        <h2>My Ratings</h2>
+    </div>
+    <div class="row-fluid">
+        <div class="gridStyle" ng-grid="gridOptions"></div>
+    </div>
+    <div class="row-fluid">
+        <br/>
+        <button class="btn btn-primary pull-right" ng-click="reviewRating()">Review It</button>
+        <button class="btn btn-primary pull-right" ng-click="deleteRating()">Delete It</button>
+    </div>
+</div>
