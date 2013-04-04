@@ -29,7 +29,7 @@
                 <tbody>
                 <tr ng-repeat="cigar in TopRatedCigars | limitTo:5">
                     <td ng-bind="cigar.Brand"></td>
-                    <td><a href="#/viewcigar/{{cigar._id.$oid}}"><span ng-bind="cigar.Name"></span></a></td>
+                    <td><a href="#/viewratings/{{cigar._id.$oid}}"><span ng-bind="cigar.Name"></span></a></td>
                     <td ng-bind="cigar.AverageRating"></td>
                 </tr>
                 </tbody>

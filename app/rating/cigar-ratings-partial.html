@@ -1,0 +1,34 @@
+<div ng-controller="cigar-ratings-controller">
+    <table class="table table-bordered">
+        <thead>
+        <td>Brand</td>
+        <td>Name</td>
+        <td>Rating</td>
+        <td>Appearance</td>
+        <td>Flavor</td>
+        <td>Smoke</td>
+        <td>Overall Impression</td>
+        <td>Comments</td>
+        </thead>
+        <tbody>
+        <tr ng-repeat="rating in Ratings">
+            <td ng-bind="rating.Brand"></td>
+            <td><a href="#/viewcigar/{{rating.CigarId}}"><span ng-bind="rating.Name"></span></a></td>
+            <td ng-bind="rating.Rating"></td>
+            <td><span ng-bind="rating.AppearanceRating"></span> - <span ng-bind="rating.Appearance"></span></td>
+            <td><span ng-bind="rating.FlavorRating"></span> - <span ng-bind="rating.Flavor"></span></td>
+            <td><span ng-bind="rating.SmokeRating"></span> - <span ng-bind="rating.Smoke"></span></td>
+            <td><span ng-bind="rating.OverallImpressionRating"></span> - <span ng-bind="rating.OverallImpression"></span>
+            </td>
+            <td ng-bind="rating.Comments"></td>
+        </tr>
+        </tbody>
+    </table>
+    <div class="control-group">
+        <label class="control-label"></label>
+
+        <div class="controls">
+            <a href="#/" class="btn btn-primary">Cancel</a>
+        </div>
+    </div>
+</div>

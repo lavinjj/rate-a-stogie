@@ -22,3 +22,7 @@ input, button, select, textarea {
     width: 750px;
     height: 250px;
 }
+
+a {
+    color: #e57e35;
+}

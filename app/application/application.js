@@ -29,5 +29,6 @@ angular.module('rateastogie', ['ui', 'ui.bootstrap', 'ui.bootstrap.carousel', 'u
         when('/cigarlist', {templateUrl:'cigar/cigar-list-partial.html'}).
         when('/ratecigar/:id', {templateUrl:'rating/add-rating-partial.html'}).
         when('/viewrating/:id', {templateUrl:'rating/view-rating-partial.html'}).
+        when('/viewratings/:id', {templateUrl:'rating/cigar-ratings-partial.html'}).
         otherwise({templateUrl: 'error/error-partial.html'});
   }]);

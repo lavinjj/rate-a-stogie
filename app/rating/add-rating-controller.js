@@ -21,22 +21,13 @@ Application.Controllers.controller('add-rating-controller', ['$scope', '$routePa
 
         rating.$saveOrUpdate();
 
-        if(!$scope.existingRating) {
-            if($scope.Cigar.AverageRating > 0){
-                $scope.Cigar.AverageRating = (($scope.Cigar.AverageRating +
-                    $scope.Rating.Rating) / 2.0);
-            } else {
-                $scope.Cigar.AverageRating = $scope.Rating.Rating;
-            }
-            $scope.Cigar.NumberOfReviews = $scope.Cigar.NumberOfReviews + 1;
-        } else {
-            var temp = $scope.Cigar.AverageRating * 2;
-
-            temp = temp - $scope.originalRating
-
-            $scope.Cigar.AverageRating = ((temp +
+        if($scope.Cigar.AverageRating > 0){
+            $scope.Cigar.AverageRating = (($scope.Cigar.AverageRating +
                 $scope.Rating.Rating) / 2.0);
+        } else {
+            $scope.Cigar.AverageRating = $scope.Rating.Rating;
         }
+        $scope.Cigar.NumberOfReviews = $scope.Cigar.NumberOfReviews + 1;
 
         $scope.Cigar.DateUpdated = new Date();
 
@@ -44,9 +35,7 @@ Application.Controllers.controller('add-rating-controller', ['$scope', '$routePa
 
         cigar.$update();
 
-        if(!$scope.existingRating) {
-            authenticate.currentUser.Ratings = authenticate.currentUser.Ratings + 1;
-        }
+        authenticate.currentUser.Ratings = authenticate.currentUser.Ratings + 1;
         authenticate.currentUser.DateUpdated = new Date();
 
         var user = new UserResource(authenticate.currentUser);
@@ -61,10 +50,10 @@ Application.Controllers.controller('add-rating-controller', ['$scope', '$routePa
             $location.path('/');
         }
 
-        CigarResource.getById($routeParams.id, function(cigar){
+        CigarResource.getById($routeParams.id).then(function(cigar){
             $scope.Cigar = cigar;
 
-            RatingResource.query({"CigarId": cigar._id.$oid, "UserId": authenticate.currentUser._id.$oid}, function(ratings){
+            RatingResource.query({"CigarId": cigar._id.$oid, "UserId": authenticate.currentUser._id.$oid}).then(function(ratings){
                $scope.Rating = ratings[0];
                 $scope.existingRating = true;
                 $scope.originalRating = $scope.Rating.Rating;
