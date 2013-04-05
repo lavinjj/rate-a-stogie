@@ -1,4 +1,5 @@
 <div ng-controller="cigar-ratings-controller">
+    <div ng-show="Ratings.length">
     <table class="table table-bordered">
         <thead>
         <td>Brand</td>
@@ -24,11 +25,15 @@
         </tr>
         </tbody>
     </table>
+    </div>
+    <div ng-hide="Ratings.length">
+        <p>No one has rated this cigar yet. Why don't you Rate it?</p>
+    </div>
     <div class="control-group">
         <label class="control-label"></label>
 
         <div class="controls">
-            <a href="#/" class="btn btn-primary">Cancel</a>
+            <button class="btn btn-primary" ng-click="rateCigar()">Rate It</button> <a href="#/" class="btn btn-primary">Cancel</a>
         </div>
     </div>
 </div>

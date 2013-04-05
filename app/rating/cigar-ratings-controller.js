@@ -4,6 +4,10 @@ Application.Controllers.controller('cigar-ratings-controller', ['$scope', '$rout
     $scope.Cigar = null;
     $scope.Ratings = []
 
+    $scope.rateCigar = function() {
+        $location.path('/ratecigar/' + $scope.Cigar._id.$oid);
+    };
+
     $scope.init = function () {
         CigarResource.getById($routeParams.id).then(function(cigar){
             $scope.Cigar = cigar;
