@@ -27,7 +27,7 @@ Application.Controllers.controller('rating-list-controller', ['$scope', '$locati
 
             $scope.ratings = ratings;
         });
-    }
+    };
 
     $scope.reviewRating = function() {
         $location.path('/ratecigar/' + $scope.mySelections[0].CigarId);

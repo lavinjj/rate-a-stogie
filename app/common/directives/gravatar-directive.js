@@ -38,7 +38,7 @@ Application.Directives.
                             defaultUrl = '404';
                         }
                         // construct the tag to insert into the element
-                        var tag = '<img src="http://www.gravatar.com/avatar/' + hash + '?s=' + size + '&r=' + rating + '&d=' + defaultUrl + '" >'
+                        var tag = '<img src="http://www.gravatar.com/avatar/' + hash + '?s=' + size + '&r=' + rating + '&d=' + defaultUrl + '" >';
                         // insert the tag into the element
                         elm.append(tag);
                     }

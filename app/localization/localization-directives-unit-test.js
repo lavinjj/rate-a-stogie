@@ -15,7 +15,7 @@ describe('i18n directive', function() {
                 } else {
                     return '';
                 }
-            },
+            }
         };
 
         module('rateastogie.services', function ($provide) {

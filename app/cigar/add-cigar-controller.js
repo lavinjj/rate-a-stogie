@@ -45,7 +45,7 @@ Application.Controllers.controller('add-cigar-controller', ['$scope', '$location
         cigar.DateCreated = new Date();
         cigar.DateUpdated = cigar.DateCreated;
 
-        cigar.$save(function (cigar) {
+        cigar.$save(function () {
             $location.path('/');
         });
     };

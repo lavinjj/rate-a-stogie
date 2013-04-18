@@ -1,8 +1,8 @@
-'use strict'
+'use strict';
 
 /**
 * The application file bootstraps the angular app by  initializing the main module and 
-* creating namespaces and moduled for controllers, filters, services, and directives. 
+* creating namespaces and modules for controllers, filters, services, and directives.
 */
 
 var Application = Application || {};

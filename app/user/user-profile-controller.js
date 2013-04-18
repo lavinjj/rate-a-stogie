@@ -23,11 +23,11 @@ Application.Controllers.controller('user-profile-controller', ['$scope', '$locat
 
     $scope.changeEmail = function () {
         $location.path('/myemail');
-    }
+    };
 
     $scope.changePassword = function () {
         $location.path('/mypassword');
-    }
+    };
 
     $scope.register = function () {
         var user = new UserResource($scope.User);

@@ -29,7 +29,7 @@ Application.Services.factory('authenticate', ['$http', '$rootScope', '$window', 
                 var passwordhash = Sha1.hash(password + Date.parse(user.DateJoined));
 
                 if (passwordhash !== user.Password) {
-                    $window.alert("Invalid password.")
+                    $window.alert("Invalid password.");
                     return;
                 }
 
@@ -39,16 +39,11 @@ Application.Services.factory('authenticate', ['$http', '$rootScope', '$window', 
         },
 
         hashPassword: function (password, salt) {
-            var result = Sha1.hash(password + salt);
-            return result;
+            return Sha1.hash(password + salt);
         },
 
         isUserLoggedIn: function () {
-            if ((authenticate.currentUser !== null) && (authenticate.currentUser !== undefined)) {
-                return true;
-            }
-
-            return false;
+            return (authenticate.currentUser !== null) && (authenticate.currentUser !== undefined);
         },
 
         logout: function () {

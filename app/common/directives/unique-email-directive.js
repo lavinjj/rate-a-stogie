@@ -22,7 +22,7 @@ Application.Directives.
                     });
 
                     return value;
-                }
+                };
 
                 ctrl.$formatters.push(validator);
                 ctrl.$parsers.push(validator);
